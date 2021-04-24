@@ -1,8 +1,25 @@
 import React from 'react';
-import { Wellcome } from './src/pages/Wellcome';
+import { Text, View } from 'react-native';
+import {
+  useFonts,
+  Jost_400Regular,
+  Jost_600SemiBold,
+} from '@expo-google-fonts/jost';
+import AppLoading from 'expo-app-loading';
+
+import Routes from './src/routes';
 
 const App = () => {
-  return <Wellcome />;
+  const [fontsLoaded] = useFonts({
+    Jost_400Regular,
+    Jost_600SemiBold,
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
+  return <Routes />;
 };
 
 export default App;
