@@ -16,7 +16,7 @@ interface PlantCardProps extends RectButtonProps {
 export const PlantCardPrimary = (props: PlantCardProps) => {
   const { data, ...rest } = props;
   return (
-    <RectButton style={styles.container}>
+    <RectButton style={styles.container} {...rest}>
       <SvgFromUri uri={data.photo} width={70} height={70} />
       <Text style={styles.text}>{data.name}</Text>
     </RectButton>
